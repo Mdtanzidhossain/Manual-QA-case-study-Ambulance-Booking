@@ -1,0 +1,9 @@
+Module,Feature,TestCaseID,Title,Preconditions,Steps,Expected,Type,Priority,Tags,Data,Browser,Automation
+Location,Pickup/Drop,AMB-001,Enter pickup/drop inside coverage,None,"Enter valid coords","Accepted; map pins shown",Pos,P1,Coverage,Inside area,Chrome,No
+Location,Permissions,AMB-005,Location off fallback,None,"Deny location; enter manually","Manual entry path works",Edge,P1,Permissions,,Firefox,No
+Fleet,Type Selection,AMB-010,Select ICU when available,None,"Choose ICU","Type accepted; surcharge noted",Pos,P2,Fleet,ICU,Edge,No
+Quote/ETA,ETA,AMB-020,ETA displays and updates,Active booking,"Open details; wait 60s","ETA refreshes; format OK",Pos,P2,ETA,±2m,Chrome,No
+Booking,Confirm,AMB-030,Confirm booking happy path,None,"Fill form -> confirm","Ref ID generated; status=Confirmed",Pos,P1,Smoke,,Firefox,No
+Booking,Cancel,AMB-040,Cancel within free window,Confirmed booking,"Cancel","State=Cancelled; policy text shown",Pos,P2,Policy,,Edge,No
+RateLimit,Spam,AMB-050,Block rapid repeat requests,None,"Submit 10 requests in 10s","Throttled with clear message",Neg,P1,Security,10/s,Chrome,No
+Coverage,Out of Area,AMB-060,Reject out-of-coverage drop,None,"Enter drop outside zone","Error explains limitation",Neg,P2,Coverage,Outside area,Firefox,No
